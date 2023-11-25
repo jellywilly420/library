@@ -1,18 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer async></script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-
+      <form>
+        <dialog>
+          <div class="title-container">
+            <label for="title">title</label>
+            <input type="text" id="title" />
+          </div>
+          <div class="author-container">
+            <label for="author">author</label>
+            <input type="text" id="author" />
+          </div>
+          <div class="progress-container">
+            <fieldset>
+              <legend>reading status</legend>
+              <div class="to-read-container">
+                <label for="to-read">to read</label>
+                <input
+                  type="radio"
+                  value="to read"
+                  id="to-read"
+                  name="status"
+                  checked
+                />
+              </div>
+              <div class="read">
+                <label for="read">finished reading</label>
+                <input type="radio" value="finished reading" id="read" name="status" />
+              </div>
+              <div class="reading-container">
+                <label for="reading">reading</label>
+                <input
+                  type="radio"
+                  value="reading"
+                  id="reading"
+                  name="status"
+                />
+              </div>
+            </fieldset>
+          </div>
+          <button id="add">add</button>
+          <button id="close">close</button>
+        </dialog>
+      </form>
+      <button id="open">add a new book</button>
     </header>
-    <main>
-        
-    </main>
-</body>
+    <main></main>
+  </body>
 </html>
