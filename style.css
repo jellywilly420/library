@@ -1,3 +1,47 @@
+*:not(dialog) {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: inherit;
+}
+body {
+    height: 100svh;
+    height: 100vh;
+    position: relative;
+    font-family: 'Ubuntu', sans-serif;
+}
 .hidden {
     opacity: 0;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+header {
+    border-bottom: 1px solid black;
+    padding: 1rem 0;
+}
+h1 {
+    text-align: center;
+    font-size: 64px;
+}
+button {
+    padding: .25rem 1rem;
+    border: 1px solid black;
+    font-size: 1.3rem;
+    border-radius: 4px;
+    background-color: #fff;
+    overflow: hidden;
+}
+button:hover {
+    filter: invert();
+}
+button:active {
+    filter: invert();
+    filter: brightness(.6);
+}
+button:focus-visible {
+    outline: 2px solid black;
+}
+#open {
+    display: block;
+    margin: 1rem auto 0;
 }

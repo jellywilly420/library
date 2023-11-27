@@ -1,7 +1,7 @@
 const library = [];
 const main = document.querySelector('main');
 const dialog = document.querySelector("dialog");
-const openButton = document.querySelector("button#open");
+const openButton = document.querySelector("header button#open");
 const closeButton = document.querySelector("button#close");
 const addButton = document.querySelector("button#add");
 const titleInput = document.querySelector("input#title");
@@ -123,8 +123,20 @@ addButton.addEventListener("click", (event) => {
     requiredAuthor.classList.remove('hidden');
   }
   else {
-    createBook().addToLibrary();
-    clearValues();
+    let bookInLibrary = false;
+    for (const book of library) {
+      if (book.title === titleInput.value && book.author === authorInput.value) {
+        bookInLibrary = true;
+      }
+    }
+    if (bookInLibrary) {
+      alert (`${titleInput.value} by ${authorInput.value} is already in the library.`);
+      clearValues();
+    }
+    else {
+      createBook().addToLibrary();
+      clearValues();
+    }
   }
 });
 titleInput.addEventListener('focus', ()=>{

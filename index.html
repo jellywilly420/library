@@ -6,19 +6,39 @@
     <title>Library</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
+      <h1>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="1em"
+          height="1em"
+          fill="#000"
+          viewBox="0 0 256 256"
+        >
+          <path
+            d="M240,64V192a16,16,0,0,1-16,16H160a24,24,0,0,0-24,24,8,8,0,0,1-16,0,24,24,0,0,0-24-24H32a16,16,0,0,1-16-16V64A16,16,0,0,1,32,48H88a32,32,0,0,1,32,32v88a8,8,0,0,0,16,0V80a32,32,0,0,1,32-32h56A16,16,0,0,1,240,64Z"
+          ></path>
+        </svg>
+        Odin Library
+      </h1>
       <form>
         <dialog>
           <div class="title-container">
             <label for="title">title</label>
-            <input type="text" id="title" />
+            <input type="text" id="title" autocomplete="off" />
             <p class="required-title hidden">this field is required.</p>
           </div>
           <div class="author-container">
             <label for="author">author</label>
-            <input type="text" id="author" />
+            <input type="text" id="author" autocomplete="off" />
             <p class="required-author hidden">this field is required.</p>
           </div>
           <div class="progress-container">
