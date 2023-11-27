@@ -11,7 +11,6 @@ const requiredTitle = document.querySelector('.title-container .required-title')
 const requiredAuthor = document.querySelector('.author-container .required-author');
 
 const div = document.createElement('div');
-div.classList.add('card');
 const h2 = document.createElement('h2');
 const p = document.createElement('p');
 const button = document.createElement('button');
@@ -30,12 +29,15 @@ function Book(title, author, readingProgress) {
     const titleNode = h2.cloneNode();
     const autherNodeP = p.cloneNode();
     const progressNode = p.cloneNode();
+    const buttonContainer = div.cloneNode();
     const removeButton = button.cloneNode();
     const changeProgressButton = button.cloneNode();
     titleNode.innerText = this.title;
     autherNodeP.innerText = 'by ' + this.author;
     progressNode.innerText = this.readingProgress;
+    cardNode.classList.add('card');
     progressNode.classList.add('progress-node');
+    buttonContainer.classList.add('button-container');
     removeButton.classList.add('delete-button');
     removeButton.innerText = "remove book";
     changeProgressButton.classList.add('change-progress-button');
@@ -44,8 +46,9 @@ function Book(title, author, readingProgress) {
     cardNode.appendChild(progressNode);
     cardNode.appendChild(titleNode);
     cardNode.appendChild(autherNodeP);
-    cardNode.appendChild(changeProgressButton);
-    cardNode.appendChild(removeButton);
+    cardNode.appendChild(buttonContainer);
+    buttonContainer.appendChild(changeProgressButton);
+    buttonContainer.appendChild(removeButton);
     main.appendChild(cardNode);
 
     removeButton.addEventListener('click',()=>{

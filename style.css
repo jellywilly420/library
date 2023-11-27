@@ -27,7 +27,7 @@ h1 {
 button {
   padding: 0.25rem 1rem;
   border: 1px solid black;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   border-radius: 4px;
   background-color: #fff;
   overflow: hidden;
@@ -132,6 +132,31 @@ dialog .button-container {
   justify-content: space-between;
 }
 dialog .button-container #close {
+  color: white;
+  background-color: black;
+  border-color: white;
+}
+main {
+  padding: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1rem;
+}
+main .card {
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 1rem;
+}
+main .card .button-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+main .card button {
+  font-size: 1.2rem;
+}
+main .card button.delete-button {
   color: white;
   background-color: black;
   border-color: white;
