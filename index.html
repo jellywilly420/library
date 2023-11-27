@@ -14,10 +14,12 @@
           <div class="title-container">
             <label for="title">title</label>
             <input type="text" id="title" />
+            <p class="required-title hidden">this field is required.</p>
           </div>
           <div class="author-container">
             <label for="author">author</label>
             <input type="text" id="author" />
+            <p class="required-author hidden">this field is required.</p>
           </div>
           <div class="progress-container">
             <fieldset>
@@ -32,9 +34,14 @@
                   checked
                 />
               </div>
-              <div class="read">
+              <div class="read-container">
                 <label for="read">finished reading</label>
-                <input type="radio" value="finished reading" id="read" name="status" />
+                <input
+                  type="radio"
+                  value="finished reading"
+                  id="read"
+                  name="status"
+                />
               </div>
               <div class="reading-container">
                 <label for="reading">reading</label>

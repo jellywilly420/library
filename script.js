@@ -7,6 +7,8 @@ const addButton = document.querySelector("button#add");
 const titleInput = document.querySelector("input#title");
 const authorInput = document.querySelector("input#author");
 const progressButtons = [...document.querySelectorAll('input[type="radio"]')];
+const requiredTitle = document.querySelector('.title-container .required-title');
+const requiredAuthor = document.querySelector('.author-container .required-author');
 
 const div = document.createElement('div');
 div.classList.add('card');
@@ -104,15 +106,34 @@ openButton.addEventListener("click", () => {
 closeButton.addEventListener("click", (event) => {
   event.preventDefault();
   clearValues();
+  requiredAuthor.classList.add('hidden');
+  requiredTitle.classList.add('hidden');
   dialog.close();
 });
-
 addButton.addEventListener("click", (event) => {
   event.preventDefault();
-  if (titleInput.value === "" || authorInput.value === "") {
-    alert("Please fill all the fields.");
-  } else {
+  if (authorInput.value === "" && titleInput.value === "") {
+    requiredTitle.classList.remove('hidden');
+    requiredAuthor.classList.remove('hidden');
+  } 
+  else if (titleInput.value === "") {
+    requiredTitle.classList.remove('hidden');
+  }
+  else if (authorInput.value === "") {
+    requiredAuthor.classList.remove('hidden');
+  }
+  else {
     createBook().addToLibrary();
     clearValues();
   }
 });
+titleInput.addEventListener('focus', ()=>{
+  if (!requiredTitle.classList.contains('hidden')) {
+    requiredTitle.classList.add('hidden');
+  }
+})
+authorInput.addEventListener('focus', ()=>{
+  if (!requiredAuthor.classList.contains('hidden')) {
+    requiredAuthor.classList.add('hidden');
+  }
+})
