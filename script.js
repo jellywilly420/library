@@ -93,13 +93,6 @@ function createBook() {
   })[0].value;
   return new Book(title, author, progress);
 }
-// function getBookFromTitle(title) {
-//     for (const book of library) {
-//         if (book.title === title) {
-//             return book;
-//         }
-//     }
-// }
 openButton.addEventListener("click", () => {
   dialog.showModal();
 });
@@ -131,12 +124,12 @@ addButton.addEventListener("click", (event) => {
     }
     if (bookInLibrary) {
       alert (`${titleInput.value} by ${authorInput.value} is already in the library.`);
-      clearValues();
     }
     else {
       createBook().addToLibrary();
-      clearValues();
+      titleInput.focus();
     }
+    clearValues();
   }
 });
 titleInput.addEventListener('focus', ()=>{
