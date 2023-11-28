@@ -216,15 +216,15 @@ main .card {
 }
 main .card:has(p.progress-node[data-progress="finished reading"]) {
   background-color: var(--teal);
-  background-image: url(/assets/check-fat-fill.svg);
+  background-image: url(./assets/check-fat-fill.svg);
 }
 main .card:has(p.progress-node[data-progress="to read"]) {
   background-color: var(--platinum);
-  background-image: url(/assets/pause-fill.svg);
+  background-image: url(./assets/pause-fill.svg);
 }
 main .card:has(p.progress-node[data-progress="reading"]) {
   background-color: var(--blue);
-  background-image: url(/assets/play-fill.svg);
+  background-image: url(./assets/play-fill.svg);
 }
 
 @media only screen and (max-width: 500px) {
