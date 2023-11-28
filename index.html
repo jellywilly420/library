@@ -31,6 +31,7 @@
       </h1>
       <form>
         <dialog>
+          <input type="text" class="no-display" >
           <div class="title-container">
             <label for="title">title</label>
             <input
@@ -38,8 +39,9 @@
               id="title"
               autocomplete="off"
               placeholder="hi there"
+              autofocus="false"
             />
-            <p class="required-title hidden">this field is required.</p>
+            <p class="required-title hidden">*this field is required.</p>
           </div>
           <div class="author-container">
             <label for="author">author</label>
@@ -48,8 +50,9 @@
               id="author"
               autocomplete="off"
               placeholder="hi there"
+              autofocus="false"
             />
-            <p class="required-author hidden">this field is required.</p>
+            <p class="required-author hidden">*this field is required.</p>
           </div>
           <div class="progress-container">
             <fieldset>

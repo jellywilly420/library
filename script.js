@@ -100,6 +100,7 @@ function createBook() {
 }
 openButton.addEventListener("click", () => {
   dialog.showModal();
+  titleInput.blur();
 });
 closeButton.addEventListener("click", (event) => {
   event.preventDefault();
@@ -113,12 +114,15 @@ addButton.addEventListener("click", (event) => {
   if (authorInput.value === "" && titleInput.value === "") {
     requiredTitle.classList.remove('hidden');
     requiredAuthor.classList.remove('hidden');
+    clearValues();
   } 
   else if (titleInput.value === "") {
     requiredTitle.classList.remove('hidden');
+    clearValues();
   }
   else if (authorInput.value === "") {
     requiredAuthor.classList.remove('hidden');
+    clearValues();
   }
   else {
     let bookInLibrary = false;
@@ -129,12 +133,13 @@ addButton.addEventListener("click", (event) => {
     }
     if (bookInLibrary) {
       alert (`${titleInput.value} by ${authorInput.value} is already in the library.`);
+      clearValues();
     }
     else {
       createBook().addToLibrary();
-      titleInput.focus();
+      clearValues();
+      dialog.close();
     }
-    clearValues();
   }
 });
 titleInput.addEventListener('focus', ()=>{

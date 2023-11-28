@@ -7,6 +7,9 @@
   box-sizing: border-box;
   font-family: inherit;
 }
+.no-display {
+  display: none;
+}
 body {
   position: relative;
   font-family: "Ubuntu", sans-serif;
@@ -31,12 +34,13 @@ button {
   border-radius: 4px;
   background-color: #fff;
   overflow: hidden;
+  cursor: pointer;
 }
 button:hover {
-  filter: invert();
+  filter: brightness(0.95);
 }
 button:active {
-  filter: invert() brightness(0.6);
+  filter: brightness(0.9);
 }
 #open {
   display: block;
@@ -46,7 +50,7 @@ dialog {
   width: min(800px, 80vw);
   border: 2px solid black;
   border-radius: 15px;
-  padding: 1.5rem 1.5rem 2.5rem;
+  padding: 2rem 1.5rem 2.5rem;
 }
 dialog input[type="text"] {
   width: 100%;
@@ -57,9 +61,7 @@ dialog input[type="text"] {
   font-size: 1.3rem;
 }
 
-dialog .title-container {
-  margin-bottom: 0.5rem;
-}
+
 dialog .title-container,
 dialog .author-container {
   padding-top: 1.5rem;
@@ -67,6 +69,7 @@ dialog .author-container {
   margin-inline: auto;
   position: relative;
   height: 65px;
+  margin-bottom: 1.5rem;
 }
 input::placeholder {
   opacity: 0;
@@ -93,11 +96,16 @@ dialog :has(input[type="text"]:placeholder-shown) label {
   cursor: text;
   user-select: none;
 }
+dialog p.required-title,
+dialog p.required-author {
+  padding-inline-start: 5px;
+  color: darkred;
+}
 
 dialog fieldset {
   border: 2px solid black;
   border-radius: 7px;
-  margin: 3rem auto 0;
+  margin: 4rem auto 0;
   width: 90%;
   position: relative;
 }
@@ -149,11 +157,6 @@ dialog .button-container {
   display: flex;
   justify-content: space-between;
 }
-dialog .button-container #close {
-  color: white;
-  background-color: black;
-  border-color: white;
-}
 main {
   padding: 3rem;
   display: grid;
@@ -174,10 +177,11 @@ main .card .button-container {
 main .card button {
   font-size: 1.2rem;
 }
-main .card button.delete-button {
+main .card button.delete-button,
+dialog .button-container button#close {
   color: white;
-  background-color: black;
-  border-color: white;
+  background-color: darkred;
+  border-color: black;
 }
 main .card {
   background-repeat: no-repeat;
