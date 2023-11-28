@@ -161,3 +161,21 @@ main .card button.delete-button {
   background-color: black;
   border-color: white;
 }
+main .card {
+  background-repeat: no-repeat;
+  background-position: 95% 5%;
+  background-size: 25%;
+}
+main .card:has(p.progress-node[data-progress="finished reading"]) {
+  background-color: aquamarine;
+  background-image: url(/assets/check-fat-fill.svg);
+}
+main .card:has(p.progress-node[data-progress="to read"]) {
+  background-color: grey;
+  background-image: url(/assets/pause-fill.svg);
+  
+}
+main .card:has(p.progress-node[data-progress="reading"]) {
+  background-color: cornflowerblue;
+  background-image: url(/assets/play-fill.svg);
+}

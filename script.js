@@ -37,6 +37,7 @@ function Book(title, author, readingProgress) {
     progressNode.innerText = this.readingProgress;
     cardNode.classList.add('card');
     progressNode.classList.add('progress-node');
+    progressNode.setAttribute('data-progress', this.readingProgress)
     buttonContainer.classList.add('button-container');
     removeButton.classList.add('delete-button');
     removeButton.innerText = "remove book";
@@ -64,6 +65,7 @@ function Book(title, author, readingProgress) {
         else {
             this.readingProgress = 'to read';
         }
+        progressNode.setAttribute('data-progress', this.readingProgress)
         for (const progressNode of main.querySelectorAll('p.progress-node')) {
             if (progressNode.parentElement.getAttribute('data-title') === this.title) {
                 progressNode.innerText = this.readingProgress;
