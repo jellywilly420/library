@@ -121,9 +121,27 @@ dialog fieldset div input[type="radio"] {
   inset: 0;
   opacity: 0;
 }
-dialog fieldset div:has(input[type="radio"]:checked) {
-  background-color: black;
+dialog fieldset div:has(input[type="radio"])::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #000;
+  z-index: -1;
+}
+dialog fieldset div:has(input[type="radio"]:checked) label {
   color: white;
+}
+dialog fieldset div:has(input[type="radio"]:checked)::after {
+  width: 100%;
+}
+dialog fieldset div::after {
+  transition: width 200ms ease-in;
+}
+dialog fieldset div label {
+  transition: color 200ms ease-in;
 }
 dialog .button-container {
   width: 90%;
