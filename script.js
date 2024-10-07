@@ -19,15 +19,17 @@ const h2 = document.createElement("h2");
 const p = document.createElement("p");
 const button = document.createElement("button");
 
-function Book(title, author, readingProgress) {
-  this.title = title;
-  this.author = author;
-  this.readingProgress = readingProgress;
+class Book {
+  constructor (title, author, readingProgress) {
+    this.title = title;
+    this.author = author;
+    this.readingProgress = readingProgress;
+  }
 
-  this.bookIndex = function () {
+  bookIndex = function () {
     return library.indexOf(this);
   };
-  this.addToLibrary = function () {
+  addToLibrary = function () {
     library.push(this);
     const cardNode = div.cloneNode();
     const titleNode = h2.cloneNode();
@@ -77,7 +79,7 @@ function Book(title, author, readingProgress) {
       }
     });
   };
-  this.removeFromLibrary = function () {
+  removeFromLibrary = function () {
     library.splice(this.bookIndex(), 1);
     for (const card of main.childNodes) {
       if (card.getAttribute("data-title") === this.title) {
